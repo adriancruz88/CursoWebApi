@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -24,14 +19,11 @@ namespace WebAPI01.Controllers
 
                 Regex maleRegex = new Regex(model.MaleRegex, RegexOptions.IgnoreCase);
                 Regex femaleRegex = new Regex(model.FemaleRegex, RegexOptions.IgnoreCase);
-                
+
                 Match male = maleRegex.Match(model.Name);
                 Match female = femaleRegex.Match(model.Name);
 
-
-
                 model.Result = "Indefinido";
-
                 if (male.Success)
                 {
                     model.Result = "Hombre";
